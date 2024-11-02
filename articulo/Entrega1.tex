@@ -27,28 +27,12 @@ costos de mercado spot de energía en el Sistema Eléctrico Nacional chileno}
 
 
 \begin{abstract}
-El precio de venta de la energía (Costo Marginal o CMg) en el mercado spot chileno se determina a través del 
-el costo de la unidad más cara actualmente despachada en el sub-sistema respectivo.
-Para optimizar la rentabilidad de BESS que retiran e inyectan al sistema mediante el mercado
-spot es crucial tener una estimación de los costos en el corto plazo (24-48 horas). Dado que el CMg depende 
-principalmente de la demanda del sistema, la disponibilidad de energía renovables no convencionales y la disponibilidad
-del parque convencional, sería posible realizar un pronóstico de ERNC utilizando técnicas de Machine Learning.
-En este trabajo se realiza un análisis de performance de diferentes arquitecturas de redes neuronales para el pronóstico, 
-incluyendo el uso de una combinación de Red Neuronal Convolucional de Grafos (GCN) y
-RNN/GRU/LSTM; un Transformer para series temporales; y un modelo híbrido Transformer + CNN para
-capturar patrones estacionales y relaciones de largo alcance.
+El precio de venta de la energía (Costo Marginal o CMg) en el mercado spot chileno se determina por el costo de la unidad más cara despachada en el sub-sistema respectivo. Para optimizar la rentabilidad de BESS que retiran e inyectan al sistema mediante el mercado spot es crucial tener una estimación de los costos en el corto plazo (24-48 horas). Este trabajo realiza un análisis de rendimiento de tres arquitecturas avanzadas de deep learning para el pronóstico del CMg: una Red Neuronal Convolucional de Grafos (GCN) combinada con GRU, un Transformer para series temporales (Informer) y un modelo híbrido Transformer + CNN (TFT) para capturar patrones estacionales y relaciones de largo alcance. El proyecto busca identificar la arquitectura más precisa para apoyar la toma de decisiones en el almacenamiento energético, optimizando el arbitraje.
  \ldots
 \end{abstract}
 
 \section{Introducción}
-Durante la última decada, Chile ha experimentado un rápido crecimiento en la penetración de
- energías renovables no convencionales (ERNC), en particular en la zona norte, como se observa en la figura \ref{fig:matriz_sistema}
- , el cual no ha sido acompañado en la misma medida por un aumento
- en la capacidad de transmisión, cuyos proyectos tienen un tiempo de desarrollo significativamente mayor.
- Esto ha llevado a que el sistema eléctrico nacional (SEN) se vea afectado por congestiones de transmisión, las cuales no dan 
- abasto para llevar toda la energía producida en la zona norte del país a las zonas centrales donde hay mayores consumos.
- Esta condición de exceso de oferta de energía en la zona norte conlleva el CMg de la zona afectada se desplome y que las 
- centrales ERNC deban disminuir su producción de energia en un fenonemo conocido como \textit{vertimiento} o \textit{curtailment}.
+Durante la última década, Chile ha experimentado un rápido crecimiento en la penetración de energías renovables no convencionales (ERNC) en la zona norte, lo que no ha sido acompañado por un aumento equivalente en la capacidad de transmisión. Esto ha causado congestiones en la transmisión, lo cual afecta el Costo Marginal de Generación (CMg) al generar precios bajos o nulos en las zonas con sobreoferta. Para maximizar la rentabilidad de BESS, es crucial identificar patrones en la variabilidad del CMg en el corto plazo (24-48 horas). En este proyecto se evaluarán tres arquitecturas de deep learning con el objetivo de comparar su efectividad en la predicción de CMg y contribuir al conocimiento científico mediante el análisis de su capacidad para capturar patrones de largo y corto alcance en series temporales energéticas.\textit{vertimiento} o \textit{curtailment}.
  
 \begin{figure}[htbp]
     \centering
@@ -112,36 +96,21 @@ Para abordar el problema, se compararan tres arquitecturas de deep learning, en 
 un enfoque novedoso para enfrentar este problema de series de tiempo:
 
 \begin{enumerate}
-    \item Red Neuronal Convolucional de Grafos
-	(GCN) + RNN/GRU/LSTM
+    \item GCN + GRU
 
-	Esta arquitectura combina una GCN para modelar la red de
-	transmision electrica y capturar interacciones espaciales, 
-	con una capa recurrente (RNN o GRU) para
-	modelar las dependencias temporales. Los nodos
-	en la GCN representan subestaciones, y las aristas representan las líneas de
-	transmision y sus restricciones de capacidad.
+	Combina una GCN para modelar la red de transmisión, capturando interacciones espaciales, con 	una capa GRU para dependencias temporales.
 
-    \item Transformer para Series Temporales
+    \item Informer
     
-	Transformers se aplicaran a los datos de series temporales para 
-	capturar patrones de largo plazo y
-	relaciones temporales en el CMg y la demanda energetica. 
-	La atencion temporal permitira que el
-	modelo identifique eventos críticos en la serie de precios y prediga
-	 tendencias a largo plazo.
-
+	Transformer optimizado para series largas, ideal para detectar patrones de largo alcance en la 	demanda y disponibilidad energética.
     \item Transformers + CNN para Series Temporales
 
-	Este enfoque combinara la capacidad de las
-	CNNs para extraer patrones locales en series temporales 
-	(como estacionalidades intradía) con la capacidad de los 
-	Transformers para capturar relaciones
-	temporales de largo alcance, permitiendo una 
-	representacion robusta de los datos temporales y la variabilidad de los precios.
+	Utiliza CNN para estacionalidades de corto plazo y atención para relaciones de largo plazo, 		adaptándose a la variabilidad del CMg en contextos de alta congestión.
     
 \end{enumerate}
 
+\section{Conclusión}
+Este proyecto proporciona un enfoque comparativo para la predicción del CMg en el sistema energético chileno, utilizando arquitecturas avanzadas de deep learning. A través del análisis del rendimiento de GCN + GRU, Informer y TFT, esperamos identificar la arquitectura que mejor capte la complejidad espaciotemporal del CMg, optimizando el arbitraje en BESS y aportando un nuevo enfoque para el manejo de la volatilidad en sistemas energéticos.
 
 
 
