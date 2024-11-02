@@ -16,10 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up LaTeX
-        uses: dante-ev/latex-action@v2
-        with:
-          root_file: articulo/Borrador_Entrega_1.tex
+      - name: Install TeX Live
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+
+      - name: Compile LaTeX document
+        run: pdflatex -output-directory=articulo articulo/Borrador_Entrega_1.tex
 
       - name: Upload PDF
         uses: actions/upload-artifact@v3
