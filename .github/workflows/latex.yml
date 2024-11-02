@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: entrega-1-con-aportes-cientificos  # Asegúrate de que esté apuntando a tu branch
 
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
@@ -16,7 +18,11 @@ jobs:
           root_file: articulo/Borrador_Entrega_1.tex
           compiler: xelatex  # Usa xelatex para compatibilidad con fontspec y polyglossia
 
+      - name: List files in articulo directory
+        run: ls articulo
+
       - name: Upload PDF
+        if: success()
         uses: actions/upload-artifact@v3
         with:
           name: latex-pdf
