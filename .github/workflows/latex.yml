@@ -14,7 +14,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: articulo/Borrador_Entrega_1.tex
-          compiler: xelatex  # Usamos xelatex para compatibilidad con polyglossia
+          compiler: xelatex  # Usa xelatex para compatibilidad con fontspec y polyglossia
 
       - name: List all files in workspace
         run: find . -type f
