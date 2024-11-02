@@ -16,7 +16,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: articulo/Borrador_Entrega_1.tex
-          compiler: xelatex  # Usa xelatex para compatibilidad con fontspec y polyglossia
+          compiler: xelatex
 
       - name: List all files in workspace
         run: find . -type f
@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: latex-pdf
-          path: Borrador_Entrega_1.pdf  # Cambia a la ubicación correcta del PDF
+          path: articulo/Borrador_Entrega_1.pdf
