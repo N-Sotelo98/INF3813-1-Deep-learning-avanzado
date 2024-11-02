@@ -14,7 +14,7 @@ jobs:
 
       # Paso 2: Configurar LaTeX en GitHub Actions
       - name: Set up LaTeX
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: articulo/Borrador_Entrega_1.tex  # Cambia esto por el archivo .tex que quieres compilar
 
