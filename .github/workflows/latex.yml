@@ -15,7 +15,7 @@ jobs:
         with:
           root_file: articulo/Borrador_Entrega_1.tex
           compiler: xelatex  # Usa xelatex para compatibilidad con fontspec y polyglossia
-          args: -file-line-error -halt-on-error -interaction=nonstopmode  # Elimina -pdf
+          args: -file-line-error -halt-on-error -interaction=nonstopmode  # Sin -pdf
 
       - name: List all files in 'articulo' directory
         run: ls -R articulo
