@@ -18,8 +18,8 @@ jobs:
           root_file: articulo/Borrador_Entrega_1.tex
           compiler: xelatex  # Usa xelatex para compatibilidad con fontspec y polyglossia
 
-      - name: List files in articulo directory
-        run: ls articulo
+      - name: List all files in workspace
+        run: find . -type f
 
       - name: Upload PDF
         if: success()
