@@ -10,11 +10,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up LaTeX
-        uses: dante-ev/latex-action@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: articulo/Borrador_Entrega_1.tex
-          compiler: xelatex  # Cambiado de pdflatex a xelatex
+          compiler: xelatex  # Usa xelatex para compatibilidad con fontspec y polyglossia
 
       - name: Upload PDF
         uses: actions/upload-artifact@v3
