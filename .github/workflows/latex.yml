@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: latex-pdf
-          path: articulo/Borrador_Entrega_1.pdf
+          path: articulo/Entrega1.pdf  # Cambiado a 'Entrega1.pdf'
