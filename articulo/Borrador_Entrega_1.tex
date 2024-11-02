@@ -40,19 +40,20 @@ Para abordar el problema, evaluamos tres arquitecturas de deep learning con capa
     \item \textbf{TFT (Transformer + CNN)}: utiliza CNN para estacionalidades de corto plazo y atención para relaciones de largo plazo, adaptándose a la variabilidad del CMg en contextos de alta congestión.
 \end{enumerate}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\columnwidth]{articulo/imgs/matriz_sist.png}
-\caption{Matriz de Generación en el Sistema Eléctrico Chileno}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\columnwidth]{articulo/imgs/cmg_comparacion.png}
-\caption{Comparación de CMg en Diferentes Zonas}
-\end{figure}
-
 \section{Conclusión}
 Este proyecto proporciona un enfoque comparativo para la predicción del CMg en el sistema energético chileno, utilizando arquitecturas avanzadas de deep learning. A través del análisis del rendimiento de GCN + GRU, Informer y TFT, esperamos identificar la arquitectura que mejor capte la complejidad espaciotemporal del CMg, optimizando el arbitraje en BESS y aportando un nuevo enfoque para el manejo de la volatilidad en sistemas energéticos.
+
+% Inserción de imágenes con rutas específicas
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{imgs/matriz_sist.png}
+    \caption{Matriz del sistema de transmisión.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{imgs/cmg_comparacion.png}
+    \caption{Comparación del Costo Marginal de Generación.}
+\end{figure}
 
 \end{document}
