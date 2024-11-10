@@ -1,3 +1,6 @@
 /.venv
 .env
-/data/respaldo_2016
+/data/pronosticos_erv/respaldo_2016
+*.csv
+!data_erv.csv
+!data_erv_aggregated.csv
