@@ -1,0 +1,5 @@
+#!/Users/maximilianocruz/Documents/GitHub/INF3813-1-Deep-learning-avanzado/env/bin/python3.11
+
+import pydoc
+if __name__ == '__main__':
+    pydoc.cli()
