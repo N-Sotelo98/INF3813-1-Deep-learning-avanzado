@@ -1,0 +1,11 @@
+/.venv
+.env
+/data/pronosticos_erv/respaldo_2016
+*.csv
+!data_erv.csv
+!data_erv_aggregated.csv
+*.pdf
+!info/Diagrama-Maestro 005-23 (1).pdf
+*.aux
+*.log
+data/pronostico_erv/data_erv.csv
