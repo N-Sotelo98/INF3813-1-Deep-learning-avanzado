@@ -5,6 +5,8 @@
 !data_erv.csv
 !data_erv_aggregated.csv
 !df_final.csv
+!df_final_metadata.csv
+!df_final_metadata_clases.csv
 *.pdf
 !info/Diagrama-Maestro 005-23 (1).pdf
 *.aux
